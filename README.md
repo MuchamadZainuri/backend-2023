@@ -1,2 +1,4 @@
 # Pemrograman Backend
-Ini adalah Repository Hasil Praktikum dan Tugas Mata kuliah Pemrograman Backend
+Nama : Muchamad Zainuri
+NIM : 0110222091
+Class : SE01
