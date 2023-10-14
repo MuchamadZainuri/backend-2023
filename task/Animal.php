@@ -2,7 +2,7 @@
 
 class Animal
 {
-    private $animals;
+    private $animals = [];
 
     public function __construct()
     {
@@ -11,7 +11,11 @@ class Animal
 
     public function index()
     {
-        return $this->animals;
+        $no = 0;
+        foreach ($this->animals as $animal) {
+            echo "\n" . ++$no . "." . $animal;
+            
+        };
     }
 
     public function store($data)
@@ -31,26 +35,23 @@ class Animal
     }
 }
 
-$animal = new Animal();
+$animal = new Animal([]);
 
 echo "Index - Menampilkan seluruh hewan";
+$animal->index();
+echo "\n";
 
-$animals = $animal->index();
-foreach ($animals as $animal) {
-    echo "\n" . $animal;
-}
-
-echo "Store - Menambahkan hewan baru <br>";
+echo "\nStore - Menambahkan hewan baru";
 $animal->store('burung');
 $animal->index();
-echo '<br>';
+echo "\n";
 
-// echo "Update - Mengupdate hewan <br>";
-// $animal->update(0,'kucing');
-// $animal->index();
-// echo '<br>';
+echo "\nUpdate - Mengupdate hewan";
+$animal->update(0, 'Kucing Anggora');
+$animal->index();
+echo "\n";
 
-// echo "Destroy - Menghapus hewan <br>";
-// $animal->destroy(0);
-// $animal->index();
-// echo '<br>';
+echo "\nDestroy - Menghapus hewan";
+$animal->destroy(1);
+$animal->index();
+echo "\n";
