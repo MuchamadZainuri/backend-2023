@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnimalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,12 +20,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+// Route untuk Menampilkan semua hewan
 Route::get('animals', [AnimalController::class, 'index']);
 
+// Route untuk menambahkan hewan
 Route::post('/animals', [AnimalController::class, 'store']);
 
-Route::put('animals/{id}',[AnimalController::class,'update']);
+// Route untuk mengedit hewan
+Route::put('animals/{id}', [AnimalController::class, 'update']);
 
-Route::delete('animals/{id}', [AnimalController::class,'destroy']);
-
-
+// Route untuk menghapus hewan
+Route::delete('animals/{id}', [AnimalController::class, 'destroy']);
