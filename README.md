@@ -1,2 +1,2 @@
 # Pertemuan 4
-Laravel Installation & Basics
+Laravel Introduction and Basics: Installation, Route, Controller, Request
