@@ -1,3 +1,3 @@
-# Pertemuan 6
+# Pertemuan 7
     
-    Building and Testing RESTful API (2)
+    Validation and Authentication RESTful API
