@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,34 +17,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
+// // Route untuk Menampilkan semua hewan
+// Route::get('animals', [AnimalController::class, 'index']);
 
-// Route untuk Menampilkan semua hewan
-Route::get('animals', [AnimalController::class, 'index']);
+// // Route untuk menambahkan hewan
+// Route::post('/animals', [AnimalController::class, 'store']);
 
-// Route untuk menambahkan hewan
-Route::post('/animals', [AnimalController::class, 'store']);
+// // Route untuk mengedit hewan
+// Route::put('animals/{id}', [AnimalController::class, 'update']);
 
-// Route untuk mengedit hewan
-Route::put('animals/{id}', [AnimalController::class, 'update']);
-
-// Route untuk menghapus hewan
-Route::delete('animals/{id}', [AnimalController::class, 'destroy']);
+// // Route untuk menghapus hewan
+// Route::delete('animals/{id}', [AnimalController::class, 'destroy']);
 
 // Route untuk menampilkan semua siswa
-Route::get("students", [StudentController::class, "index"]);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get("students", [StudentController::class, "index"]);
 
-// Route untuk menampilkan siswa secara spesifik
-Route::get("students/{id}", [StudentController::class, "spesifik"]);
+    // Route untuk menampilkan siswa secara spesifik
+    Route::get("students/{id}", [StudentController::class, "spesifik"]);
 
-// Route untuk menambahkan siswa
-Route::post("students", [StudentController::class, "store"]);
+    // Route untuk menambahkan siswa
+    Route::post("students", [StudentController::class, "store"]);
 
-// Route untuk mengedit siswa
-Route::put("students/{id}", [StudentController::class, "update"]);
+    // Route untuk mengedit siswa
+    Route::put("students/{id}", [StudentController::class, "update"]);
 
-// Route untuk menghapus siswa
-Route::delete("students/{id}", [StudentController::class, "delete"]);
+    // Route untuk menghapus siswa
+    Route::delete("students/{id}", [StudentController::class, "delete"]);
+
+});
+
+// Route untuk register
+Route::post("/register", [AuthController::class, "register"]);
+
+// Route untuk login
+Route::post("/login", [AuthController::class, "login"]);
