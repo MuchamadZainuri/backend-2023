@@ -1,4 +1,2 @@
-# Pemrograman Backend
-Nama : Muchamad Zainuri <br>
-NIM : 0110222091 <br>
-Class : SE01
+# Pertemuan 9
+    Introduction to JavaScript and ES6
