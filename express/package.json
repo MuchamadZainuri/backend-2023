@@ -1,0 +1,25 @@
+{
+  "name": "backend-2023",
+  "version": "1.0.0",
+  "description": "Express Installation and Basics",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuchamadZainuri/Pemrograman-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuchamadZainuri/Pemrograman-Backend/issues"
+  },
+  "homepage": "https://github.com/MuchamadZainuri/Pemrograman-Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2"
+  }
+}
